@@ -1,0 +1,46 @@
+# Virtual env
+HDP_venv/
+venv/
+.env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Model files
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.keras
+
+# Logs
+logs/
+*.log
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backend cache (you have __pycache__ inside backend)
+backend/__pycache__/

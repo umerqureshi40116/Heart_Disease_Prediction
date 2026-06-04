@@ -1,0 +1,546 @@
+/* ========================================================================
+   HEART DISEASE PREDICTION APP - STYLING
+   ======================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #667eea;
+  --primary-dark: #764ba2;
+  --secondary: #f093fb;
+  --success: #51cf66;
+  --danger: #ff6b6b;
+  --warning: #ffd93d;
+  --dark: #2d3436;
+  --light: #f5f6fa;
+  --gray: #b0bec5;
+  --border: #e0e6ed;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================================================
+   TYPOGRAPHY & GENERAL
+   ======================================================================== */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ========================================================================
+   CONTAINER & LAYOUT
+   ======================================================================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================================================
+   HEADER
+   ======================================================================== */
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header .subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.status-badge.healthy {
+  background-color: var(--success);
+  color: white;
+}
+
+.status-badge.unhealthy {
+  background-color: var(--danger);
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========================================================================
+   FORM STYLING
+   ======================================================================== */
+
+.prediction-form {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+.form-section h2 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--dark);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: white;
+  color: var(--dark);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input:hover,
+.form-group select:hover {
+  border-color: var(--primary-dark);
+}
+
+/* ========================================================================
+   BUTTONS
+   ======================================================================== */
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--light);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ========================================================================
+   RESULTS BOX
+   ======================================================================== */
+
+.result-box {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.6s ease-out;
+}
+
+.result-box h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.result-box.positive {
+  border-top: 5px solid var(--danger);
+}
+
+.result-box.negative {
+  border-top: 5px solid var(--success);
+}
+
+/* ========================================================================
+   RESULT GRID
+   ======================================================================== */
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.result-item {
+  background: var(--light);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.result-item .label {
+  display: block;
+  font-weight: 600;
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.result-item .value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.risk-very-high-risk {
+  color: var(--danger) !important;
+  font-size: 1.5rem !important;
+}
+
+.risk-high-risk {
+  color: #ff9100 !important;
+  font-size: 1.5rem !important;
+}
+
+.risk-moderate-risk {
+  color: var(--warning) !important;
+  font-size: 1.5rem !important;
+}
+
+.risk-low-risk {
+  color: var(--success) !important;
+  font-size: 1.5rem !important;
+}
+
+/* ========================================================================
+   PROBABILITY CHART
+   ======================================================================== */
+
+.probability-chart {
+  margin: 30px 0;
+  padding: 20px;
+  background: var(--light);
+  border-radius: 8px;
+}
+
+.probability-chart h3 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  text-align: center;
+}
+
+.chart {
+  width: 100%;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bar-label {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 0.95rem;
+}
+
+.bar-container {
+  width: 100%;
+  height: 40px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--border);
+}
+
+.bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: width 0.6s ease;
+  min-width: 40px;
+}
+
+.bar-green {
+  background: linear-gradient(90deg, var(--success), #37b24d);
+}
+
+.bar-red {
+  background: linear-gradient(90deg, var(--danger), #f73b39);
+}
+
+/* ========================================================================
+   MESSAGES
+   ======================================================================== */
+
+.result-message {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--light);
+  border-left: 4px solid var(--primary);
+  border-radius: 4px;
+}
+
+.result-message p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--dark);
+}
+
+.result-message strong {
+  color: var(--primary);
+}
+
+/* ========================================================================
+   ERROR BOX
+   ======================================================================== */
+
+.error-box {
+  background: #ffe5e5;
+  border: 2px solid var(--danger);
+  color: #c92a2a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  animation: slideDown 0.4s ease-out;
+}
+
+/* ========================================================================
+   FOOTER
+   ======================================================================== */
+
+.footer {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 5px 0;
+  opacity: 0.9;
+}
+
+/* ========================================================================
+   RESPONSIVE DESIGN
+   ======================================================================== */
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header .subtitle {
+    font-size: 1rem;
+  }
+
+  .prediction-form,
+  .result-box {
+    padding: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========================================================================
+   PRINT STYLES
+   ======================================================================== */
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .header,
+  .footer,
+  .button-group {
+    display: none;
+  }
+
+  .prediction-form,
+  .result-box {
+    box-shadow: none;
+    border: 1px solid var(--border);
+    page-break-inside: avoid;
+  }
+}
+
+/* ========================================================================
+   ANIMATIONS
+   ======================================================================== */
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.btn:active {
+  transform: scale(0.98);
+}

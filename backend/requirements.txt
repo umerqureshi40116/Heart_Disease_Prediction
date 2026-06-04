@@ -1,0 +1,28 @@
+# ========================================================================
+# HEART DISEASE PREDICTION API - EXACT PINNED VERSIONS
+# Model trained with: scikit-learn==1.6.1
+# NO VERSION CONFLICTS - PRODUCTION READY
+# ========================================================================
+
+# FastAPI & Server
+fastapi==0.115.12
+uvicorn[standard]==0.30.6
+
+
+# Machine Learning
+scikit-learn==1.6.1
+joblib==1.4.2
+numpy==1.26.4
+
+# Utilities
+python-multipart==0.0.9
+pydantic==2.11.7
+pydantic-core==2.33.2
+
+# CORS and HTTP
+starlette>=0.40,<0.47
+
+# Development (optional)
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
